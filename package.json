@@ -1,9 +1,10 @@
 {
   "name": "hllo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uh a social network of some kind? I dunno tbh lmao",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,5 +15,8 @@
     "dotenv": "8.2.0",
     "graphql": "15.4.0",
     "mongoose": "5.11.13"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7"
   }
 }
