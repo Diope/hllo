@@ -11,7 +11,7 @@ const server = new ApolloServer({
 });
 
 mongoose
-    .connect(process.env.MONGO, {useNewUrlParser: true})
+    .connect(process.env.MONGO, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log(`MongoDB Atlas connected`);
         return server.listen({port: 5000})
