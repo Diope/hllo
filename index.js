@@ -3,15 +3,31 @@ const gql = require("graphql-tag");
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const Post = require('./models/Post');
+const User = require('./models/User');
+
 const typeDefs  = gql`
+    type Post {
+        id: ID!
+        body: String!
+        username: String!
+        createdAt: String!
+    }
     type Query{
-        testQuery: String!
+        getPosts: [Post]
     }
 `
 
 const resolvers = {
     Query: {
-        testQuery: () => 'Test'
+        async getPosts () {
+            try {
+                const posts = await Post.find();
+                return posts;
+            } catch (err) {
+                throw new Error(err);
+            }
+        }
     }
 };
 
