@@ -9,3 +9,8 @@ posting, deleting of posts. I might add in image hosting via AWS or Firestore, n
 * MongoDB
 * Node
 * GraphQL
+
+### Notes
+I've decided on putting comments within an array on the post model as I didn't want to deal with the complexities of handling/maintaining data duplication, and requesting data. To be certain, comments SHOULD get their own model/Schema and not be a subdocument if only from a architecture/design standpoint. Because the question arises what if a post has 150 comments? Suddenly being a subdocument in the post isn't looking so good!
+
+But for the purposes of this toy app, I'll go with subdocument array for comments.

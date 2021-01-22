@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server');
-const { CLOSING } = require('ws');
+
 const Post = require('../../models/Post');
 const auth = require('../../utils/auth')
 
