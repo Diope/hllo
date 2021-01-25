@@ -19,10 +19,10 @@ module.exports = gql`
 
     type Like {
         id: ID!
+        userId: String!
         username: String!
         createdAt: String!
     }
-
 
     type User {
         id: ID!
