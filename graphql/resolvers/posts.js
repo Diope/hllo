@@ -1,4 +1,5 @@
 const { AuthenticationError, UserInputError } = require('apollo-server');
+const { args } = require('commander');
 const { post } = require('got');
 
 const Post = require('../../models/Post');
@@ -32,7 +33,8 @@ module.exports = {
     Mutation: {
         async createPost(_, {body}, context) {
             const user = auth(context);
-            // console.log(user);
+            
+            if (args.body.trim() === '') throw new Error("You cannot submit an empty post");
 
             const _post = new Post({
                 body,
