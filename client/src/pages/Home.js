@@ -10,7 +10,7 @@ export default function Home() {
     const {loading, data: {getPosts: posts}} = useQuery(FETCH_POSTS_QUERY);
 
     return (
-        <Grid columns={3} divided>
+        <Grid columns={1}>
             <Grid.Row>
                 <h1>Recent Posts</h1>
             </Grid.Row>
