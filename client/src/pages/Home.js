@@ -2,7 +2,7 @@ import React from 'react';
 import {useQuery} from '@apollo/client/react/hooks';
 import gql from 'graphql-tag';
 
-import {Grid, GridRow, GridColumn} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 
 import PostCard from '../components/PostCard'
 
@@ -34,15 +34,11 @@ export default function Home() {
 
 const FETCH_POSTS_QUERY = gql`
 {
-    getPosts{
-        id body createdAt username likeCount
-        likes {
-            username
-        }
-        commentCount
-        comments {
-            id username createdAt body
-        }
+    getPosts {
+        id
+        createdAt
+        body
+        username
     }
 }
 `
